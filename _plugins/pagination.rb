@@ -14,10 +14,9 @@ module Jekyll
       # Returns nothing.
       def generate(site)
         if Pager.pagination_enabled?(site)
-
           path_array = site.config['paginatepath']
           length = path_array.length-1
-          for i in 0..length do  
+          for i in 0..length do
             site.config['paginate_path'] = path_array[i]
             if template = template_page(site)
               paginate(site, template)
@@ -45,6 +44,7 @@ module Jekyll
       #                   "next_page" => <Number> }}
       def paginate(site, page)
         all_posts = site.site_payload['site']['posts']
+        # all_posts = site.static_files.filter_map { |f| f.relative_path if f.path.include?('assets/comics') }
         paginate_array = site.config['paginate_path'].split('/')
         len = paginate_array.length-1
         name = site.config['paginate_path'].split('/')[len-2]
@@ -53,7 +53,7 @@ module Jekyll
         else
           all_posts = all_posts.reject { |p| p['hidden'] }
         end
-        
+
         pages = Pager.calculate_pages(all_posts, site.config['paginate'].to_i)
 
         (1..pages).each do |num_page|
@@ -89,7 +89,7 @@ module Jekyll
       #
       # Returns the Jekyll::Page which will act as the pager template
       def template_page(site)
-        site.pages.dup.select do |page| 
+        site.pages.dup.select do |page|
           Pager.pagination_candidate?(site.config, page)
         end.sort do |one, two|
           two.path.size <=> one.path.size

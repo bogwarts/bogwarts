@@ -1,0 +1,28 @@
+<li class="fadeInUp animated">
+  <div class="comic">
+    {% assign image_files = site.static_files | where_exp: "file", "file.path contains 'assets/comics'" |  map: "path" %}
+    <img id="curr-comic" src='{{image_files[18]}}' />
+    <div id="comic-paginate">
+      <button class="tag-comic" id="previous-comic" style="display: none" onclick="incrementIndex(-1)">Back</button>
+      <button class="tag-comic" id="next-comic" onclick="incrementIndex(1)">Next</button>
+    </div>
+  </div>
+</li>
+
+
+<script>
+  var imageIndex = 0;
+  var comicImage = document.getElementById('curr-comic');
+  var backButton = document.getElementById("previous-comic");
+  var paths = JSON.parse('{{ image_files | jsonify }}');
+
+  function incrementIndex(increment) {
+    imageIndex = (imageIndex + increment) % paths.length;
+    if (imageIndex <= 0) {
+      backButton.style.display = "none";
+    } else {
+      backButton.style.display = "inline-block";
+    }
+    comicImage.setAttribute("src", paths[imageIndex]);
+  }
+</script>

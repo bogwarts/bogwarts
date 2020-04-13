@@ -41,7 +41,7 @@ a{
   color: #444;
   /*display: block;*/
   /*font-family: 'Kaushan Script', cursive;*/
-  font-family: Pacifico;
+  font-family: Lora;
 }
 .top-nav{
     height: 100%;
@@ -101,9 +101,9 @@ a{
 }
 
 .top{
-    height: 440px;
+    height: 450px;
     max-width: 1280px;
-    margin: -20px auto;
+    margin: -150px auto;
     background-image: url(/assets/lineart.png);
     color: #555;
     background-size: 1188px 219px;
@@ -132,7 +132,7 @@ a{
     /*font-weight: 600;*/
     color: #555;
     /*font-family: 'Kaushan Script', cursive;*/
-    font-family: Pacifico;
+    font-family: Lora;
 }
 .top span:nth-child(2){
     display: block;
@@ -362,6 +362,7 @@ a{
   /*transition-duration: .2s;*/
 }
 
+
 @-webkit-keyframes tadatag {
   0% {
     -webkit-transform: scale3d(1, 1, 1);
@@ -455,6 +456,52 @@ a{
           animation-fill-mode: both;
   /*transition-duration: .2s;*/
 }
+
+#comic-paginate {
+  text-align: center;
+}
+
+.tag-comic{
+  display: inline-block;
+  height: 35px;
+  width: auto;
+  padding: 0 10px;
+  color: #555;
+  border: 1px solid #e7eaf1;
+  border-radius: 3px;
+  line-height: 35px;
+  margin: 4px;
+  font-family: Ubuntu;
+  font-size: 1.2em;
+  text-decoration: none;
+  /*transition-duration: .2s;*/
+}
+
+.tag-comic:hover {
+  color: #f15b6c;
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s
+}
+
+.tag-comic:active {
+  text-decoration: none;
+}
+
+button:focus {outline:0;}
+
+
+.tag-comic:nth-child(3n-1):hover {
+  background-color: rgb(154, 133, 255);
+  color: white;
+  font-weight: bold;
+}
+
+.tag-comic:nth-child(3n-2):hover {
+  background-color: rgb(98, 170, 255);
+  color: white;
+  font-weight: bold;
+}
+
 
 
 .tag-name{
@@ -1109,4 +1156,19 @@ a{
 }
 #media{
   display: none;
+}
+.comic {
+  height: auto;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.comic img {
+  text-align: center;
+  width: 96%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 15px 2%;
 }

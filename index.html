@@ -1,18 +1,20 @@
 ---
 layout: default
-title: your awesome title
-page-title: your awesome page-title.
-home-title: your awesome home-title.
-description: description
+title: bogwarts
+page-title: Bogwarts Comics
+home-title: slice of life coding comics
+description:
 ---
 
 {% include header.html %}
 {% include boot.html %}
+{% include title.html %}
 <main>
-    {% include title.html %}
     <ul class="post-list">
-      {% include posts_paginator.html %}
+      {% include image_paginator.html %}
+    </ul>
+    <ul class="ex-list">
+      {% include mailchimp.html %}
     </ul>
 </main>
-{% include pageNav.html %}
 {% include footer.html %}

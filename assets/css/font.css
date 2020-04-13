@@ -107,3 +107,8 @@
        url("../fonts/DankMonoNormal/DankMonoNormal.eot") format("embedded-opentype"),
        url("../fonts/DankMonoNormal/DankMonoNormal.svg") format("svg");
 }
+
+@font-face {
+  font-family: "Lora";
+  src: url("../fonts/Lora/Lora-VariableFont_wght.ttf") format("truetype"),
+}
