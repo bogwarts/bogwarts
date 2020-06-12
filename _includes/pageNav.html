@@ -1,0 +1,32 @@
+  <div id="comic-paginate">
+    {% if paginator.page == 1 %}
+        <!-- <a class="tag-comic" href="{{ "/" | relative_url }}" title="Index Page">1</a> -->
+    {% endif %}
+    {% if paginator.next_page %}
+        <a class="tag-comic" href="/page{{ paginator.next_page }}/" title="Next Page">Descendio</a>
+    {% else %}
+            <span class="tag-comic disabled"
+              title="Previous Page">Descendio</span>
+    {% endif %}
+    {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+            <a class="tag-comic" href="{{ "/" | relative_url }}" title="Previous Page">Ascendio</a>
+            {% else %}
+            <a class="tag-comic" href="{{ paginator.previous_page_path }}"
+              title="Previous Page">Ascendio</a>
+        {% endif %}
+
+        {% else %}
+            <span class="tag-comic disabled"
+              title="Previous Page">Ascendio</span>
+
+    {% endif %}
+    {% if paginator.page == paginator.total_pages %}
+      {% if paginator.total_pages == 1 %}
+        <a class="tag-comic"  href="{{ paginator.page_path }}"
+          title="Final Page">{{ paginator.page }}</a>
+      {% else %}
+        <!-- <a class="tag-comic" href="{{ "/" | relative_url }}" title="No Next">\</a> -->
+      {% endif %}
+    {% endif %}
+  </div>

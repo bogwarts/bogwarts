@@ -1,0 +1,21 @@
+---
+layout: default
+title: bogwarts
+page-title: bogwarts comics
+home-title: slice of life coding comics
+description:
+---
+
+{% include header.html %}
+{% include boot.html %}
+<!-- {% include title.html %} -->
+<main>
+  <ul class="comic-list">
+    {% include image_paginator.html %}
+    <!-- {% include posts_paginator.html %} -->
+  </ul>
+  <ul class="mailchimp-list">
+    {% include mailchimp.html %}
+  </ul>
+</main>
+{% include footer.html %}
