@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% include head.html %}
+{% include androidColor.html %}
+</head>
+<body>
+
+<a id="htmlup" name="htmlup"></a>
+{% include post-header.html %}
+{% include boot.html %}
+{% include post-title.html %}
+<div class="markdown-body">
+
+  {% if page.subtitle %}
+    {% if page.color.size==0 or page.color==nil %}
+      <div class="postpage-subtitle" style="border-left: 8px solid #9A85FF; border-right: 8px solid #9A85FF;">
+        {{ page.subtitle }}
+      </div>
+    {% else %}
+      <div class="postpage-subtitle" style="border-left: 8px solid {{ page.color }}; border-right: 8px solid {{ page.color }}">
+        {{ page.subtitle }}
+      </div>
+    {% endif %}
+  {% endif %}
+
+  {{ page.content }}
+  {% include share.html %}
+</div>
+
+<a id="htmldown" name="htmldown"></a>
+{% include comment.html %}
+{% include goto.html %}
+{% include footer.html %}
+
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<script>
+    window.onbeforeunload = function(){
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+    }
+</script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+
+title: 'bogwarts coding comics'
+description: 'funny and wholesome slice of life coding comics'
+keywords: 'webcomic, dillbert, coding comics, comics, xkcd, programming, programming comics, funny programming memes, coding memes, code meme'
+url: 'https://bogwarts.github.io' # your host
+
+nav:
+  home: '/'
+  # timeline: '/timeline.html'
+  about: '/about.html'
+  # tags: '/tags.html'
+
+
+author: true
+name: 'bea'
+NickName: 'coderbea'
+webtitle: 'bogwarts'
+bio: 'bea is a software engineer in san francisco'
+about: true
+aboutyou: 'Hello! My name is Bea, pronounced (BAY-ah). I started bogwarts on June of 2019,
+right after graduating college. I was bored out of my mind and did what any
+millenial would do -- go on instagram and look for the meaning of life there. I may not have
+found it but I did find really good looking pictures of Ryan Reynolds. In between scrolling
+through photos of arguably the most good looking man on this planet, I saw some really
+amazing webcomics on there, and thought it would be very very fun to learn how to draw
+and make one! Well, 30 comics later I am here, "creating" a website, wondering if anyone will
+ever look at it. It is on Jekyll, and I have done horrific things like not
+clean up the boilerplate, and putting inline styles because giving a div a new class, pressing cmd + p,
+looking up style.css and then styling it could have been time well spent eating nutella. So here is
+a very bloated jekyll website that looks great in no part of my own.
+'
+portraits: '/assets/profile.png'
+logo: '/assets/logo.png'
+
+# SNS
+SNS: true
+SNS-icon: #['Facebook', 'Twitter', 'instagram']
+  mail: 'mailto:bogwartscomics@gmail.com'
+  instagram: 'https://instagram.com/bogwarts'
+  Twitter: 'https://twitter.com/coderbea'
+
+paginate: 1
+paginatepath: ['page:num']
+
+
+
+
+# since
+footer:
+  since: 2020
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+highlighter: rouge
+# 代码高亮主题使用pygments主题: autumn\ default\ emacs\ friendly\ manni\ murphy\ pastie\ perldoc\ tango 任选一个你喜欢的主题名称填在下面的单引号中
+pygmentsTheme: 'default'
+
+
+# disqus 评论
+disqus: false
+disqus_url: '' # https://abc.disqus.com/embed.js
+# 来必力评论
+livere: true
+livere_uid: 'MTAyMC8zNDI2OS8xMDgwNg==' # MTAyMC8zNDI2OS8xMDgwNg==
+# Gitment评论 OAuth Application
+Gitment: false
+Gitment_owner: ''  # github用户名
+Gitment_repo: ''  # github博客存放的仓库名
+client_id: ''  # 注册 OAuth Application 后获得的 client_id
+client_secret: ''  # 注册 OAuth Application 后获得的 client_secret
+
+# Share : weibo, qq, wechat, tencent, douban, qzone, linkedin, diandian, facebook, twitter, google
+social-share: true
+social-share-items: ['instagram', 'twitter', 'facebook']
+
+google: true
+google-ID: ''
+
+color: rgb(154,133,255) rgb(255,90,90) rgb(255,210,32) rgb(98,170,255)
+
+plugins:
+  - jekyll-seo-tag

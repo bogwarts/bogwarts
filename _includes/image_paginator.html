@@ -1,0 +1,18 @@
+
+{% for post in paginator.posts %}
+<li>
+  {% if site.SNS %}
+  {% for sns-icon in site.SNS-icon %}
+  <a target="_blank" rel="noopener noreferrer" href="{{ sns-icon[1] }}" title="{{ sns-icon[0] }}">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-{{ sns-icon[0] }}"></use>
+    </svg>
+  </a>
+  {% endfor%}
+  {% endif %}
+  <div class="comic">
+    <img id="curr-comic" src="{{ post }}" alt="{{ post | split: '/' | last | split: '-' | last | split: '.' | first }}" />
+    {% include pageNav.html %}
+  </div>
+</li>
+{% endfor %}

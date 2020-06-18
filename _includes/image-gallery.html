@@ -1,0 +1,61 @@
+<li class="fadeInUp animated">
+  {% if site.SNS %}
+  {% for sns-icon in site.SNS-icon %}
+  <a href="{{ sns-icon[1] }}" title="{{ sns-icon[0] }}">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-{{ sns-icon[0] }}"></use>
+    </svg>
+  </a>
+  {% endfor%}
+  {% endif %}
+  <div class="comic">
+    {% assign imageIndex = 28 %}
+    {% assign pathLength = site.static_files | where_exp: "file", "file.path contains 'assets/comics'" |  map: "path" | length %}
+    <img id="curr-comic" src='/assets/comics/{{imageIndex}}.png' />
+    <div id="comic-paginate">
+      <button class="tag-comic" id="previous-comic" onclick="incrementIndex(-1)">Back</button>
+      <button class="tag-comic" id="random-comic" onclick="randomIndex()">Random</button>
+      <button class="tag-comic" id="next-comic" onclick="incrementIndex(1)">Next</button>
+    </div>
+  </div>
+</li>
+
+
+<script>
+  var imageIndex = {
+    {
+      imageIndex
+    }
+  };
+  var prevIndices = [{
+    {
+      imageIndex
+    }
+  }];
+  var pathLength = {
+    {
+      pathLength
+    }
+  }
+  var comicImage = document.getElementById('curr-comic');
+  var backButton = document.getElementById("previous-comic");
+
+  function randomIndex() {
+    randIndex = Math.floor(Math.random() * Math.floor(paths.length));
+    imageIndex = randIndex === imageIndex ? (randIndex + 1) % pathsLength : randIndex;
+    prevIndices.push(imageIndex);
+    comicImage.setAttribute("src", `/assets/comics/lowres/${imageIndex}.png`);
+  }
+
+  function incrementIndex(increment) {
+    if (increment < 0 && prevIndices.length > 1) {
+      prevIndices.pop();
+      imageIndex = prevIndices[prevIndices.length - 1];
+    } else if (increment > 0) {
+      imageIndex = (imageIndex + 1) % pathLength;
+      prevIndices.push(imageIndex);
+    }
+
+    comicImage.setAttribute("src", `/assets/comics/${imageIndex}.png`);
+  }
+</script>
