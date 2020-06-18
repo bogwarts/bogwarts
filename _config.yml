@@ -1,4 +1,4 @@
-# Site settings 配置站点
+
 title: 'bogwarts coding comics'
 description: 'funny and wholesome slice of life coding comics'
 keywords: 'webcomic, dillbert, coding comics, comics, xkcd, programming, programming comics, funny programming memes, coding memes, code meme'
@@ -10,7 +10,7 @@ nav:
   about: '/about.html'
   # tags: '/tags.html'
 
-# 博主
+
 author: true
 name: 'bea'
 NickName: 'coderbea'
